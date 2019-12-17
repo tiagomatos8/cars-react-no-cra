@@ -9,7 +9,9 @@
   <li>bulma: Open source CSS framework based on Flexbox</li>
   <li>css-loader: Interprets @import and url() like import/require() and will resolve them</li>
   <li>html-webpack-plugin: Generate html build/file based on template</li>
+  <li>mini-css-extract-plugin: extracts CSS into separate files. It creates a CSS file per JS file which contains CSS</li>
   <li>node-sass-chokidar: Stylesheet preprocessor</li>
+  <li>sass-loader: Loads a Sass/SCSS file and compiles it to CSS</li>
   <li>style-loader: Inject CSS into the DOM</li>
   <li>webpack: Bundle assets together</li>
   <li>webpack-cli: Allow to run webpack commands (used in build script)</li>
