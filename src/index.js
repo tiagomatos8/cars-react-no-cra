@@ -1,4 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<div>App working!!!!!!!</div>, document.getElementById('app'));
+import './index.css';
+
+const App = props => {
+  return (
+    <div className='App-component'>
+      App component
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('app'));
