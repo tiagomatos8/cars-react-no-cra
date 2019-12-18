@@ -10,9 +10,9 @@ module.exports = {
   },
   module: {
     rules: [
-      { 
-        test: /\.js$/, 
-        exclude: /node_modules/, 
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
         }
@@ -41,5 +41,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/allstyles.css' // create the final css files into dist/css/allstyles.css
     })
-  ]
+  ],
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './',
+    hot: true
+  }
 };
