@@ -23,13 +23,6 @@ const Header = props => {
               />
             </a>
 
-            <div className='navbar-brand__item-burger-section'>
-              <div className='navbar-item'>
-                <div className='buttons'>
-                  <Button color='is-success' isRounded={true} label='1300 GoLend' icon='fab fa-twitter' />
-                </div>
-              </div>
-
               <a
                 role='button'
                 className={`navbar-burger ${menuOpen && 'is-active'}`}
@@ -43,11 +36,11 @@ const Header = props => {
                 <span aria-hidden='true'></span>
 
               </a>
-            </div>
+            
           </div>
 
-          <div className="navbar-menu">
-            <div className="navbar-start">
+          <div className={`navbar-menu ${menuOpen && 'is-active'}`}>
+            <div className="navbar-end">
               <div className='navbar-item'>
                 <Button color='is-success' isRounded={true} label='1300 GoLend' icon='fab fa-twitter' />
               </div>
