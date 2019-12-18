@@ -42,7 +42,13 @@ const Header = props => {
           <div className={`navbar-menu ${menuOpen && 'is-active'}`}>
             <div className="navbar-end">
               <div className='navbar-item'>
-                <Button color='is-success' isRounded={true} label='1300 GoLend' icon='fab fa-twitter' />
+                <Button 
+                  color='is-success' 
+                  isRounded={true} 
+                  label='1300 GoLend' 
+                  icon='fas fa-phone'
+                  isOutlined={true}
+                />
               </div>
             </div>
           </div>
