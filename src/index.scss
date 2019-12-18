@@ -24,9 +24,12 @@ $primary-invert: $pink-invert;
 */
 
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import '../node_modules/bulma/sass/utilities/initial-variables';
 
+// ##### START - VARIABLES ##### //
 $family-poppins-serif: 'Poppins', sans-serif;
 $family-primary: $family-poppins-serif;
+$navbar-burger-color: #3ec46d;
+// ##### END - VARIABLES ##### //
 
 @import '../node_modules/bulma/bulma.sass';

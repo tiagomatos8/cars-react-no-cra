@@ -1,54 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 import Image from '../Image/Image';
 
+import './Header.scss';
+
 const Header = props => {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div>
-      <nav className='navbar' role='navigation' aria-label='main navigation'>
-        <div className='navbar-brand'>
-          <a className='navbar-item' onClick={() => console.log('history.push("/years")')}>
-            {/* crate a image component */}
-            <Image
-              imageUrl='https://images.ctfassets.net/cvf73uxjrvk8/4SqBLy8f5lTANevQmm9U6O/5e8a29512ecbf8d5307eb1890e34bcb2/logo-color.svg'
-              width='112'
-              height='28'
-            />
+    <header className='Header-component'>
+      <nav className='navbar is-spaced' role='navigation' aria-label='main navigation'>
+        <div className='container'>
 
-          </a>
+          <div className='navbar-brand'>
+            <a className='navbar-item' onClick={() => props.redirect('/years')}>
+              <Image
+                imageUrl='https://images.ctfassets.net/cvf73uxjrvk8/4SqBLy8f5lTANevQmm9U6O/5e8a29512ecbf8d5307eb1890e34bcb2/logo-color.svg'
+                width='112'
+                height='28'
+              />
+            </a>
 
-          <a
-            role='button'
-            className='navbar-burger burger'
-            aria-label='menu'
-            aria-expanded='false'
-            data-target='navbarBasicExample'
-          >
-            <span aria-hidden='true'></span>
-            <span aria-hidden='true'></span>
-            <span aria-hidden='true'></span>
-          </a>
-        </div>
+            <div className='navbar-brand__item-burger-section'>
+              <div className='navbar-item'>
+                <div className='buttons'>
+                  <Button color='is-success' isRounded={true} label='1300 GoLend' icon='fab fa-twitter' />
+                </div>
+              </div>
 
-        <div id='navbarBasicExample' className='navbar-menu'>
+              <a
+                role='button'
+                className={`navbar-burger ${menuOpen && 'is-active'}`}
+                aria-label='menu'
+                aria-expanded='false'
+                data-target='navBarTop'
+                onClick={() => setMenuOpen(!menuOpen)}>
 
-          <div className='navbar-end'>
-            <div className='navbar-item'>
-              <div className='buttons'>
+                <span aria-hidden='true'></span>
+                <span aria-hidden='true'></span>
+                <span aria-hidden='true'></span>
+
+              </a>
+            </div>
+          </div>
+
+          <div className="navbar-menu">
+            <div className="navbar-start">
+              <div className='navbar-item'>
                 <Button color='is-success' isRounded={true} label='1300 GoLend' icon='fab fa-twitter' />
-                <a className='button is-light'>Log in</a>
               </div>
             </div>
           </div>
+
         </div>
       </nav>
-    </div>
+    </header>
   );
 };
 
 Header.propTypes = {
-  
+  redirect: PropTypes.func
 };
 
 export default Header;
