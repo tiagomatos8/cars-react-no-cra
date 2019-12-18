@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 const Years = props => {
-  return <div></div>;
+  return <section className='section'>Years page</section>;
 };
 
 Years.propTypes = {};

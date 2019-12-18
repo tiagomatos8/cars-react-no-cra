@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
+import Image from '../Image/Image';
 
 const Header = props => {
   return (
@@ -8,11 +9,13 @@ const Header = props => {
       <nav className='navbar' role='navigation' aria-label='main navigation'>
         <div className='navbar-brand'>
           <a className='navbar-item' onClick={() => console.log('history.push("/years")')}>
-            <img
-              src={props.logo}
+            {/* crate a image component */}
+            <Image
+              imageUrl='https://images.ctfassets.net/cvf73uxjrvk8/4SqBLy8f5lTANevQmm9U6O/5e8a29512ecbf8d5307eb1890e34bcb2/logo-color.svg'
               width='112'
               height='28'
             />
+
           </a>
 
           <a
@@ -45,7 +48,7 @@ const Header = props => {
 };
 
 Header.propTypes = {
-  logo: PropTypes.string
+  
 };
 
 export default Header;
