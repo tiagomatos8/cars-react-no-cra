@@ -1,15 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, useHistory } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
 import Header from './components/Header/Header';
 import YearsPage from './pages/Years/YearsPage';
 
 const App = () => {
+  const history = createBrowserHistory();
+  
   return (
     <div className='App-component'>
       <Router>
         <>
-          <Header />
+          <Header redirect={history.push} />
 
           <Switch>
 
