@@ -12,7 +12,7 @@
   <li>open http://localhost:8080/</li>
 </ol>
 
-<h3>Production mode</h3>
+<h4>Production mode</h4>
 <ol>
   <li>yarn global add live-server</li>
   <li>cd cars-react-no-cra</li>
@@ -22,7 +22,7 @@
   <li>live-server</li>
 </ol>
 
-<h3>Packages explanation</h3>
+<h4>Packages explanation</h4>
 <ul>
   <li><strong>prop-types</strong>: Runtime type checking for React props and similar objects</li>
   <li><strong>react</strong>: JavaScript library for creating user interfaces</li>
