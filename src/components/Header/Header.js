@@ -18,8 +18,7 @@ const Header = props => {
             <a className='navbar-item' onClick={() => props.redirect('/years')}>
               <Image
                 imageUrl='https://images.ctfassets.net/cvf73uxjrvk8/4SqBLy8f5lTANevQmm9U6O/5e8a29512ecbf8d5307eb1890e34bcb2/logo-color.svg'
-                width='112'
-                height='28'
+                size='is-120-28'
               />
             </a>
 
