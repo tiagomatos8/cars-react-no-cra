@@ -12,6 +12,7 @@ import PropTypes from 'prop-types';
  * @param {string} color color of the button https://bulma.io/documentation/elements/button/#colors
  * @param {string} size size of the button https://bulma.io/documentation/elements/button/#sizes
  * @param {boolean} isFullwidth make button full width
+ * @param {function} handleClick handles click of the button
  */
 const Button = props => {
   const classNamesObj = {
@@ -25,6 +26,7 @@ const Button = props => {
 
   return (
     <button
+      onClick={props.handleClick}
       className={`
         Button-component 
         button 
@@ -56,7 +58,8 @@ Button.propTypes = {
   icon: PropTypes.string,
   color: PropTypes.string,
   size: PropTypes.string,
-  isFullwidth: PropTypes.bool
+  isFullwidth: PropTypes.bool,
+  handleClick: PropTypes.func
 };
 
 export default Button;
