@@ -1,47 +1,44 @@
 import React from 'react';
-
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+
+import Header from './components/Header/Header';
+import Years from './pages/Years/Years';
 
 const App = () => {
+  const history = createBrowserHistory();
+
   return (
-    <div className='App.component'>
+    <div className='App-component'>
       <Router>
-        <Switch>
-          {/* If the current URL is /years, this route is rendered
-            while the rest are ignored */}
-          <Route path='/years'>
-            {props => (
-              <div>
-                years
-                <Link to='/vehicles'>Vehicles</Link>
-              </div>
-            )}
-          </Route>
+        <>
+          <Header redirect={history.push} />
 
-          <Route path='/vehicles'>
-            {props => (
-              <div>
-                vehicles
-                <Link to='/years'>Years</Link>
-              </div>
-            )}
-          </Route>
+          <Switch>
+            {/* If path equals / always redirect to /years path */}
+            <Route
+              exact
+              path='/'
+              render={props => {
+                props.history.push('/years');
+              }}
+            />
 
-          {/* If none of the previous routes render anything,
-            this route acts as a fallback.
+            {/* Passing Route props to child component, so child can have access to history, location and match */}
+            <Route exact path='/years' render={props => <Years {...props} />} />
 
-            Important: A route with path="/" will *always* match
-            the URL because all URLs begin with a /. So that's
-            why we put this one last of all */}
-          <Route path='/'>
-            {props => (
-              <div>
-                years
-                <Link to='/vehicles'>Vehicles</Link>
-              </div>
-            )}
-          </Route>
-        </Switch>
+            {/* Passing Route props to child component, so child can have access to history, location and match */}
+            <Route
+              exact
+              path='/vehicles'
+              render={props => (
+                <div>
+                  vehicles<Link to='/years'>Years</Link>
+                </div>
+              )}
+            />
+          </Switch>
+        </>
       </Router>
     </div>
   );

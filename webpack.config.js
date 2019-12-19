@@ -6,13 +6,14 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'js/bundle.js'
+    filename: 'js/bundle.js',
+    publicPath: '/'
   },
   module: {
     rules: [
-      { 
-        test: /\.js$/, 
-        exclude: /node_modules/, 
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
         }
@@ -41,5 +42,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/allstyles.css' // create the final css files into dist/css/allstyles.css
     })
-  ]
+  ],
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './',
+    hot: true
+  }
 };
