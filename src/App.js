@@ -1,18 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 
 import Header from './components/Header/Header';
 import Years from './pages/Years/Years';
+import Vehicles from './pages/Vehicles/Vehicles';
+import { Switch, Route, Router } from "./utils/routes/router";
 
 const App = () => {
-  const history = createBrowserHistory();
 
   return (
     <div className='App-component'>
       <Router>
         <>
-          <Header redirect={history.push} />
+          <Header />
 
           <Switch>
             {/* If path equals / always redirect to /years path */}
@@ -31,11 +30,7 @@ const App = () => {
             <Route
               exact
               path='/vehicles'
-              render={props => (
-                <div>
-                  vehicles<Link to='/years'>Years</Link>
-                </div>
-              )}
+              render={props => <Vehicles {...props} />}
             />
           </Switch>
         </>
