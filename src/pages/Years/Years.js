@@ -6,11 +6,24 @@ import AvatarSection from '../../components/AvatarSection/AvatarSection';
 import TitleSection from '../../components/TitleSection/TitleSection';
 
 const Years = props => {
+  
   const yearsData = [
     ['2019', '2018', '2017', '2016'],
     ['2015', '2014', '2013', '2012'],
     ['2011', '2010', '2009', "I'll walk"]
   ];
+
+  const handleClick = year => {
+
+    // Only go to next page if the year button clicked have a valid year/number
+    if (!!parseInt(year)) {
+      props.history.push({
+        pathname: '/vehicles',
+        state: { year }
+      });
+    }
+  }
+
   return (
     <div className='Years-component'>
 
@@ -38,7 +51,7 @@ const Years = props => {
                               isFullwidth={true}
                               size='is-medium'
                               color='has-text-grey'
-                              handleClick={() => props.history.push({ pathname: '/vehicles', state: { year } })}
+                              handleClick={() => handleClick(year)}
                             />
                           </Column>
                         );
