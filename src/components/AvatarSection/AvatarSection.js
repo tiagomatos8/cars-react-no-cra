@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import Image from '../../components/Image/Image';
 
 /**
  * AvatarSection - Avatar section of the pages
- * 
- * @param {*} props 
+ *
+ * @param {*} props
  */
 const AvatarSection = props => {
   return (
@@ -23,11 +23,9 @@ const AvatarSection = props => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-AvatarSection.propTypes = {
-  
-}
+AvatarSection.propTypes = {};
 
-export default AvatarSection
+export default AvatarSection;
