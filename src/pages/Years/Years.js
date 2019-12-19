@@ -1,9 +1,9 @@
 import React from 'react';
-import Image from '../../components/Image/Image';
 
-import './Years.scss';
 import Button from '../../components/Button/Button';
 import Column from '../../components/Column/Column';
+import AvatarSection from '../../components/AvatarSection/AvatarSection';
+import TitleSection from '../../components/TitleSection/TitleSection';
 
 const Years = props => {
   const yearsData = [
@@ -14,65 +14,42 @@ const Years = props => {
   return (
     <div className='Years-component'>
 
-      {/* START - AVATAR SECTION */}
-      <section className='section'>
-        <div className='container'>
-          <div className='columns'>
-            <div className='column is-10 is-offset-1'>
-              <Image
-                imageUrl='../../../assets/avatar-logo-center.png'
-                alt='random person avatar'
-                isRounded={true}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* END - AVATAR SECTION */}
+      <AvatarSection />
 
-      {/* START - TITLE SECTION */}
-      <section className='section'>
-        <div className='container'>
-          <div className='columns'>
-            <div className='column is-10 is-offset-1'>
-              <div className='heading'>
-                <h1 className='title has-text-centered has-text-success'>
-                  What year is the car?
-                </h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* END - TITLE SECTION */}
+      <TitleSection title='What year is the car?' />
 
       {/* START - YEARS SECTION */}
       <section className='section'>
         <div className='container'>
           <div className='columns'>
             <div className='column is-10 is-offset-1'>
+
+              {/* START - PRINT YEARS ROW  */}
               {yearsData.map((yearsGroup, index) => {
                 return (
                   <div key={index} className='columns'>
-                    {yearsGroup.map((year, index) => {
-                      if (index <= 3) {
+
+                    {/* START - PRINT YEAR BUTTON  */}
+                    {yearsGroup.map(year => {
                         return (
-                          <Column size='is-one-quarter'>
+                          <Column key={year} size='is-one-quarter'>
                             <Button
                               label={year}
                               isFullwidth={true}
                               size='is-medium'
                               color='has-text-grey'
+                              handleClick={() => props.history.push({ pathname: '/vehicles', state: { year } })}
                             />
                           </Column>
                         );
-                      } else {
-                        return null;
-                      }
                     })}
+                    {/* END - PRINT YEAR BUTTON  */}
+
                   </div>                  
                 );
               })}
+              {/* END - PRINT YEARS ROW  */}
+              
             </div>
           </div>
         </div>
