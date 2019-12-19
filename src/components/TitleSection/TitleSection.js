@@ -13,7 +13,7 @@ const TitleSection = props => {
         <div className='columns'>
           <div className='column is-10 is-offset-1'>
             <div className='heading'>
-              <h1 className='title has-text-centered has-text-success'>
+              <h1 className='title has-text-centered has-text-success is-size-5-mobile'>
                 {props.title}
               </h1>
             </div>
