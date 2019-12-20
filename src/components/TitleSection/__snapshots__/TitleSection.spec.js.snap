@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TitleSection Component Test Suite Render TitleSection component with no props 1`] = `
+<section
+  className="TitleSection-component section"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="columns"
+    >
+      <div
+        className="column is-10 is-offset-1"
+      >
+        <div
+          className="heading"
+        >
+          <h1
+            className="title has-text-centered has-text-success is-size-5-mobile"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
