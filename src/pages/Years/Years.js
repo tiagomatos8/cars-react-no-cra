@@ -1,17 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Button from '../../components/Button/Button';
 import Column from '../../components/Column/Column';
 import AvatarSection from '../../components/AvatarSection/AvatarSection';
 import TitleSection from '../../components/TitleSection/TitleSection';
+import { yearsData } from '../../data/data';
 
 const Years = props => {
   
-  const yearsData = [
-    ['2019', '2018', '2017', '2016'],
-    ['2015', '2014', '2013', '2012'],
-    ['2011', '2010', '2009', "I'll walk"]
-  ];
+  const [years, setYears] = useState(yearsData);
 
   const handleClick = year => {
 
@@ -38,7 +35,7 @@ const Years = props => {
             <div className='column is-10 is-offset-1'>
 
               {/* START - PRINT YEARS ROW  */}
-              {yearsData.map((yearsGroup, index) => {
+              {years.map((yearsGroup, index) => {
                 return (
                   <div key={index} className='columns'>
 
