@@ -4,6 +4,8 @@
 <p>git clone https://github.com/tiagomatos8/cars-react-no-cra.git</p>
 <p>then</p>
 
+<h4>Please use node version 8.11.1</h4>
+
 <h4>Development mode</h4>
 <ol>
   <li>cd cars-react-no-cra</li>

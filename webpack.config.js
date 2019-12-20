@@ -32,22 +32,6 @@ module.exports = {
             }
           }
         ]
-      },
-      {
-        test: /\.(jpg|jpeg|png|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name (file) {
-                return '[name].[ext]';
-              },
-              publicPath: '/assets/',
-              outputPath: '/dist/assets/'
-            }
-          }
-          
-        ]
       }
     ]
   },
