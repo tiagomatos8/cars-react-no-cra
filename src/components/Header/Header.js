@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 import Image from '../Image/Image';
 import { Link } from '../../utils/routes/router';
