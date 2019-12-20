@@ -13,23 +13,23 @@ import './Image.scss';
  * @param {string} alt image description for screen readers
  */
 const Image = props => {
-  return (
-    <figure className={`Image-component image ${props.size}`}>
-      <img
-        className={props.isRounded && 'is-rounded'}
-        src={props.imageUrl}
-        alt={props.alt}
-      />
-    </figure>
-  );
-}
+    return (
+        <figure className={`Image-component image ${props.size}`}>
+            <img
+                className={props.isRounded && 'is-rounded'}
+                src={props.imageUrl}
+                alt={props.alt}
+            />
+        </figure>
+    );
+};
 
 
 Image.propTypes = {
-  imageUrl: PropTypes.string,
-  size: PropTypes.string, // https://bulma.io/documentation/elements/image/#fixed-square-images
-  isRounded: PropTypes.bool, 
-  alt: PropTypes.string
-}
+    imageUrl: PropTypes.string,
+    size: PropTypes.string, // https://bulma.io/documentation/elements/image/#fixed-square-images
+    isRounded: PropTypes.bool, 
+    alt: PropTypes.string
+};
 
 export default Image;
